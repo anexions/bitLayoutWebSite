@@ -646,6 +646,17 @@ footer {
         display: block;
     }
 
+    /* Mobile Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    footer {
+        padding-bottom: 6rem; /* Extra space for whatsapp/cookies */
+    }
+
     .nav-links {
         position: fixed;
         left: -100%;
@@ -712,6 +723,11 @@ footer {
             flex-direction: column;
             text-align: center;
             gap: 1rem;
+        }
+
+        .footer-content p {
+            font-size: 0.75rem;
+            line-height: 1.4;
         }
     }
 }
