@@ -106,7 +106,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--accent-steel);
+    color: var(--accent-red);
 }
 
 
@@ -326,6 +326,64 @@ h2 {
 }
 
 .price-card.featured li { border-color: rgba(255,255,255,0.1); }
+
+/* --- Proyectos Section --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    border-color: var(--accent-red);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.project-image {
+    padding: 3rem;
+    background: #f8fafc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.mockup-content h4 {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+    color: var(--primary);
+    letter-spacing: -0.03em;
+}
+
+.mockup-content p {
+    color: var(--text-muted);
+    max-width: 500px;
+}
 
 /* --- Tooltip System --- */
 .price-card li::after {
