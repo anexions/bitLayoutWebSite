@@ -321,9 +321,69 @@ h2 {
     padding: 0.75rem 0;
     border-bottom: 1px solid var(--border);
     font-size: 0.95rem;
+    position: relative;
+    cursor: help;
 }
 
 .price-card.featured li { border-color: rgba(255,255,255,0.1); }
+
+/* --- Tooltip System --- */
+.price-card li::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 220px;
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    pointer-events: none;
+    margin-bottom: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Tooltip Arrow */
+.price-card li::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border: 6px solid transparent;
+    border-top-color: var(--primary);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 101;
+    margin-bottom: 0px;
+}
+
+.price-card li:hover::after,
+.price-card li:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Tooltip style for the featured (dark) card */
+.price-card.featured li::after {
+    background: white;
+    color: var(--primary);
+    border: none;
+}
+.price-card.featured li::before {
+    border-top-color: white;
+}
 
 /* --- Contacto --- */
 .contact-layout {
@@ -415,4 +475,16 @@ footer {
     
     .section-layout { gap: 3rem; }
     #hero h1 { font-size: 3.5rem; }
+    
+    .price-card {
+        padding: 2rem;
+    }
+    
+    /* On small mobile, adjust tooltip positioning to avoid screen overflow */
+    @media (max-width: 480px) {
+        .price-card li::after {
+            width: 180px;
+            font-size: 0.7rem;
+        }
+    }
 }
