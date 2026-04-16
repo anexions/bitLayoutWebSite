@@ -112,11 +112,11 @@ body {
 
 /* --- Hero --- */
 #hero {
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .hero-content {
@@ -190,7 +190,7 @@ body {
 
 /* --- Sections --- */
 section {
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 h2 {
@@ -468,6 +468,49 @@ footer {
     transform: translateY(0);
 }
 
+/* --- Cookie Banner --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    background: rgba(29, 53, 87, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem 0;
+    z-index: 2000;
+    color: white;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.cookie-banner.visible {
+    display: block;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cookie-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.cookie-content .btn {
+    padding: 0.6rem 1.5rem;
+    white-space: nowrap;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 900px) {
     .section-layout, .pricing-grid, .contact-layout, .philosophy-grid {
         grid-template-columns: 1fr;
@@ -485,6 +528,12 @@ footer {
         .price-card li::after {
             width: 180px;
             font-size: 0.7rem;
+        }
+
+        .cookie-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
         }
     }
 }
