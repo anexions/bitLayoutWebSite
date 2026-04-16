@@ -1,0 +1,10 @@
+<svg xmlns="http://www.开展w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fondo azul oscuro -->
+  <rect width="100" height="100" rx="20" fill="#1D3557" />
+  
+  <!-- "b" en blanco -->
+  <path d="M 35 25 L 35 75 A 15 15 0 0 0 65 60 L 65 40 A 15 15 0 0 0 35 25 Z" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Punto rojo (accent-red) -->
+  <circle cx="65" cy="75" r="8" fill="#E63946" />
+</svg>
