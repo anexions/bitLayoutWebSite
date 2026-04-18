@@ -400,21 +400,21 @@ h2 {
 /* --- Proyectos Section --- */
 .projects-grid {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     overflow-x: auto;
-    padding-bottom: 3rem;
-    margin-top: 3rem;
+    padding: 1rem 0 3rem 0;
+    margin-top: 2rem;
     scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) transparent;
+    scrollbar-width: none; /* Hide for cleaner look, use indicator instead */
+    -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
-    /* Edge mask for smooth fade out */
-    mask-image: linear-gradient(to right, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    /* Gentler mask to show there is more content */
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
 }
 
 .projects-grid::-webkit-scrollbar {
-    height: 6px;
+    display: none;
 }
 
 .projects-grid::-webkit-scrollbar-track {
@@ -428,7 +428,7 @@ h2 {
 }
 
 .project-card {
-    flex: 0 0 calc(100% - 2rem);
+    flex: 0 0 85%; /* Peek next card */
     scroll-snap-align: center;
     display: block;
     text-decoration: none;
@@ -442,17 +442,67 @@ h2 {
 }
 
 @media (min-width: 768px) {
+    .projects-grid {
+        gap: 2.5rem;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
     .project-card {
-        flex: 0 0 calc(60% - 2rem);
+        flex: 0 0 calc(50% - 1.25rem);
         scroll-snap-align: start;
     }
 }
 
 @media (min-width: 1024px) {
     .project-card {
-        flex: 0 0 calc(45% - 2rem);
-        scroll-snap-align: start;
+        flex: 0 0 calc(33.333% - 1.666rem);
     }
+}
+
+/* --- Scroll Hint Indicator --- */
+.scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: -1rem;
+    color: var(--text-muted);
+}
+
+.scroll-line {
+    height: 2px;
+    background: var(--border);
+    flex-grow: 1;
+    position: relative;
+    border-radius: 2px;
+}
+
+.scroll-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    background: var(--primary);
+    border-radius: 2px;
+    animation: slideHint 3s infinite ease-in-out;
+}
+
+@keyframes slideHint {
+    0% { left: 0; }
+    50% { left: 70%; }
+    100% { left: 0; }
+}
+
+.scroll-indicator span {
+    font-size: 0.75rem;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+    .scroll-indicator { display: none; }
 }
 
 .project-card:hover {
