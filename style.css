@@ -123,6 +123,15 @@ a, button, [role="button"], .project-card, .price-card {
     color: var(--accent-red);
 }
 
+.contact-meta a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-meta a:hover {
+    color: var(--accent-red);
+}
+
 /* --- Hamburger Menu --- */
 .hamburger {
     display: none;

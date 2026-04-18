@@ -60,11 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = 'Enviando...';
             btn.disabled = true;
             
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Construct the mailto link
+            const subject = encodeURIComponent(`Nuevo mensaje de ${name} via bitLayout`);
+            const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\nIdea/Mensaje:\n${message}`);
+            const mailtoLink = `mailto:hola@bitlayout.es?subject=${subject}&body=${body}`;
+
             setTimeout(() => {
                 btn.innerText = '¡Mensaje Enviado!';
                 btn.style.background = '#10b981'; // Green
                 form.reset();
-            }, 1500);
+                
+                // Open the mail client
+                window.location.href = mailtoLink;
+            }, 1000);
         });
     }
 
