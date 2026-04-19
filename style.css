@@ -840,3 +840,38 @@ footer {
         }
     }
 }
+
+/* --- Disable animations on Mobile/Tablet for Projects --- */
+@media (max-width: 1024px) {
+    #proyectos .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .project-card, 
+    .project-card:hover,
+    .mockup-content,
+    .project-card:hover .mockup-content,
+    .project-overlay,
+    .project-card:hover .project-overlay {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .mockup-content {
+        transform: none !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+    }
+
+    /* Remove the scroll hint for a cleaner look */
+    .scroll-indicator {
+        display: none !important;
+    }
+    
+    .projects-grid {
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+    }
+}
+
