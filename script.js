@@ -100,49 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Image Modal Logic
-    const imageModal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-img');
-    const modalCaption = document.getElementById('modal-caption');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const modalClose = document.querySelector('.modal-close');
-
-    if (imageModal && modalImg && galleryItems.length > 0) {
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const img = item.querySelector('img');
-                const caption = item.querySelector('.mono-text');
-                
-                imageModal.style.display = 'block';
-                modalImg.src = img.src;
-                modalCaption.innerText = caption.innerText;
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            item.classList.toggle('faq-open');
         });
-
-        const closeModal = () => {
-            imageModal.style.display = 'none';
-            document.body.style.overflow = ''; // Restore scrolling
-        };
-
-        if (modalClose) {
-            modalClose.addEventListener('click', closeModal);
-        }
-
-        // Close on click outside the image
-        imageModal.addEventListener('click', (e) => {
-            if (e.target === imageModal) {
-                closeModal();
-            }
-        });
-
-        // Close on ESC key
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && imageModal.style.display === 'block') {
-                closeModal();
-            }
-        });
-    }
+    });
 
     // --- Background Spotlight Logic ---
     window.addEventListener('mousemove', (e) => {
