@@ -310,7 +310,7 @@ h2 {
 /* --- Soluciones Section --- */
 .pricing-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 4rem;
 }
@@ -323,11 +323,34 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
-.price-card:hover {
-    border-color: var(--accent-steel);
-    transform: translateY(-5px);
+.card-badge {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: var(--accent-red);
+    color: white;
+    padding: 5px 40px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    letter-spacing: 0.1em;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.2);
+    z-index: 10;
+}
+
+.price-card.accent {
+    background: #ebf5f7;
+    border-color: rgba(168, 218, 220, 0.5);
+}
+
+.price-card.accent:hover {
+    border-color: var(--accent-frost);
+    background: #e1f0f2;
 }
 
 .price-card.featured {
@@ -353,6 +376,9 @@ h2 {
     font-weight: 800;
     margin-bottom: 2rem;
     color: var(--primary);
+    position: relative;
+    cursor: help;
+    display: inline-block;
 }
 
 .price span {
@@ -565,13 +591,17 @@ h2 {
 }
 
 /* --- Tooltip System --- */
-.price-card li::after {
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    width: 220px;
+    width: 240px;
     background: var(--primary);
     color: white;
     padding: 0.8rem 1rem;
@@ -590,7 +620,7 @@ h2 {
 }
 
 /* Tooltip Arrow */
-.price-card li::before {
+[data-tooltip]::before {
     content: '';
     position: absolute;
     bottom: 100%;
@@ -605,21 +635,171 @@ h2 {
     margin-bottom: 0px;
 }
 
-.price-card li:hover::after,
-.price-card li:hover::before {
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
 }
 
-/* Tooltip style for the featured (dark) card */
-.price-card.featured li::after {
+/* Tooltip style for elements inside featured card */
+.featured [data-tooltip]::after {
     background: white;
     color: var(--primary);
     border: none;
 }
-.price-card.featured li::before {
+.featured [data-tooltip]::before {
     border-top-color: white;
+}
+
+/* --- Galería Section --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(29, 53, 87, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(29, 53, 87, 0.15);
+    border-color: var(--accent-steel);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-label {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.4rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.gallery-item:hover .gallery-label {
+    background: var(--accent-red);
+    border-color: var(--accent-red);
+    transform: translateY(-2px);
+}
+
+/* --- Image Modal --- */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease-out;
+}
+
+.modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    color: var(--accent-frost);
+    padding: 2rem 0;
+    font-size: 1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: 300;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 3001;
+}
+
+.modal-close:hover {
+    color: var(--accent-red);
+    transform: rotate(90deg);
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 95%;
+        margin-top: 40px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --- Contacto --- */
