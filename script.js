@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.transitionDelay = `${index * 0.1}s`;
     });
 
-    // Form submission (placeholder)
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
+    // Form submission (specifically for the contact section)
+    const contactForm = document.querySelector('#contacto form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const btn = form.querySelector('button');
+            const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
             btn.innerText = 'Enviando...';
             btn.disabled = true;
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 btn.innerText = '¡Mensaje Enviado!';
                 btn.style.background = '#10b981'; // Green
-                form.reset();
+                contactForm.reset();
                 
                 // Open the mail client
                 window.location.href = mailtoLink;
@@ -86,16 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!localStorage.getItem('cookiesAccepted')) {
         setTimeout(() => {
-            cookieBanner.classList.add('visible');
+            if (cookieBanner) cookieBanner.classList.add('visible');
         }, 2000);
     }
 
     if (acceptCookiesBtn) {
         acceptCookiesBtn.addEventListener('click', () => {
             localStorage.setItem('cookiesAccepted', 'true');
-            cookieBanner.classList.remove('visible');
+            if (cookieBanner) cookieBanner.classList.remove('visible');
             setTimeout(() => {
-                cookieBanner.style.display = 'none';
+                if (cookieBanner) cookieBanner.style.display = 'none';
             }, 500);
         });
     }
@@ -105,9 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            item.classList.toggle('faq-open');
-        });
+        if (question) {
+            question.addEventListener('click', () => {
+                item.classList.toggle('faq-open');
+            });
+        }
     });
 
     // --- Background Spotlight Logic ---
