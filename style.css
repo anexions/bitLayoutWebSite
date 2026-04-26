@@ -1034,9 +1034,92 @@ footer {
         display: none !important;
     }
     
+
     .projects-grid {
         mask-image: none !important;
         -webkit-mask-image: none !important;
+    }
+}
+
+/* --- Proyecto Form Specific --- */
+.project-form-container {
+    max-width: 800px;
+    margin: 6rem auto;
+    background: white;
+    padding: 4rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 50px rgba(29, 53, 87, 0.05);
+}
+
+.project-form-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-form-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.file-input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.file-input-wrapper input[type='file'] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-custom-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    transition: var(--transition);
+    justify-content: center;
+    text-align: center;
+}
+
+.file-input-wrapper:hover .file-custom-btn {
+    border-color: var(--accent-steel);
+    background: rgba(168, 218, 220, 0.1);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--accent-steel);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--accent-red);
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .project-form-container {
+        padding: 2rem;
+        margin: 3rem 1rem;
+    }
+
+    .project-form-header h1 {
+        font-size: 2rem;
     }
 }
 
