@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Proyecto | bitLayout</title>
+    <meta name="description" content="Cuéntanos sobre tu proyecto y empecemos a construir algo increíble.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <div class="project-form-container reveal active">
+            <a href="index.html" class="back-link">
+                <span>←</span> Volver a bitLayout
+            </a>
+            
+            <header class="project-form-header">
+                <p class="mono-text">02 // brief</p>
+                <h1>Tu Proyecto <span class="highlight">Empieza Aquí.</span></h1>
+                <p class="subtitle">Rellena este breve cuestionario para que podamos entender tu visión y transformarla en código.</p>
+            </header>
+
+            <form action="https://formsubmit.co/hola@bitlayout.es" method="POST" enctype="multipart/form-data">
+                <!-- Configuración de FormSubmit -->
+                <input type="hidden" name="_subject" value="🚀 NUEVO PROYECTO: Briefing recibido!">
+                <input type="hidden" name="_next" value="https://bitlayout.es/gracias.html">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-group">
+                    <label for="negocio">Nombre de tu Negocio</label>
+                    <input type="text" id="negocio" name="Nombre del Negocio" placeholder="Ej: Café Estelar" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="idea">Tu Idea</label>
+                    <textarea id="idea" name="Idea del Proyecto" rows="5" placeholder="¿Qué quieres conseguir con esta web? Describe tu visión..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="colores">Colores y Estética</label>
+                    <input type="text" id="colores" name="Colores y Estética" placeholder="Ej: Minimalista, tonos madera y verde bosque">
+                </div>
+
+                <div class="form-group">
+                    <label>Imágenes de tu Negocio</label>
+                    <div class="file-input-wrapper">
+                        <div class="file-custom-btn">
+                            <span>📁</span>
+                            <span id="file-name">Haz clic o arrastra para subir tus fotos (opcional)</span>
+                        </div>
+                        <input type="file" name="Imagenes" multiple accept="image/*" onchange="document.getElementById('file-name').innerText = this.files.length + ' archivos seleccionados'">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentarios Extra</label>
+                    <textarea id="comentarios" name="Comentarios Adicionales" rows="3" placeholder="Algo más que debamos saber..."></textarea>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Briefing</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content" style="justify-content: center;">
+                <div class="logo">bit<span>Layout</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
