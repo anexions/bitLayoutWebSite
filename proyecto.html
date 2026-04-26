@@ -27,49 +27,90 @@
             <header class="project-form-header">
                 <p class="mono-text">02 // brief</p>
                 <h1>Tu Proyecto <span class="highlight">Empieza Aquí.</span></h1>
-                <p class="subtitle">Rellena este breve cuestionario para que podamos entender tu visión y transformarla en código.</p>
+                <p class="subtitle">Rellena este cuestionario detallado para que podamos transformar tu negocio en una experiencia web única.</p>
             </header>
 
             <form action="https://formsubmit.co/hola@bitlayout.es" method="POST" enctype="multipart/form-data">
                 <!-- Configuración de FormSubmit -->
-                <input type="hidden" name="_subject" value="🚀 NUEVO PROYECTO: Briefing recibido!">
+                <input type="hidden" name="_subject" value="🚀 NUEVO PROYECTO: Briefing Detallado recibido!">
                 <input type="hidden" name="_next" value="https://bitlayout.es/gracias">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
 
-                <div class="form-group">
-                    <label for="negocio">Nombre de tu Negocio</label>
-                    <input type="text" id="negocio" name="Nombre del Negocio" placeholder="Ej: Café Estelar" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="idea">Tu Idea</label>
-                    <textarea id="idea" name="Idea del Proyecto" rows="5" placeholder="¿Qué quieres conseguir con esta web? Describe tu visión..." required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="colores">Colores y Estética</label>
-                    <input type="text" id="colores" name="Colores y Estética" placeholder="Ej: Minimalista, tonos madera y verde bosque">
-                </div>
-
-                <div class="form-group">
-                    <label>Imágenes de tu Negocio</label>
-                    <div class="file-input-wrapper">
-                        <div class="file-custom-btn">
-                            <span>📁</span>
-                            <span id="file-name">Haz clic o arrastra para subir tus fotos (opcional)</span>
-                        </div>
-                        <input type="file" name="Imagenes" multiple accept="image/*" onchange="document.getElementById('file-name').innerText = this.files.length + ' archivos seleccionados'">
+                <!-- SECCIÓN 1: IDENTIDAD -->
+                <div class="form-section" style="margin-bottom: 3rem;">
+                    <h3 class="mono-text" style="color: var(--accent-red); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">01 // Identidad del Negocio</h3>
+                    <div class="form-group">
+                        <label for="negocio">Nombre Comercial</label>
+                        <input type="text" id="negocio" name="Nombre Comercial" placeholder="Ej: Café Estelar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eslogan">Eslogan o frase corta</label>
+                        <input type="text" id="eslogan" name="Eslogan" placeholder="La frase que define lo que haces">
+                    </div>
+                    <div class="form-group">
+                        <label for="sector">Sector o Actividad</label>
+                        <input type="text" id="sector" name="Sector" placeholder="Ej: Restauración, Inmobiliaria, etc." required>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="comentarios">Comentarios Extra</label>
-                    <textarea id="comentarios" name="Comentarios Adicionales" rows="3" placeholder="Algo más que debamos saber..."></textarea>
+                <!-- SECCIÓN 2: ESTILO -->
+                <div class="form-section" style="margin-bottom: 3rem;">
+                    <h3 class="mono-text" style="color: var(--accent-red); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">02 // Identidad Visual</h3>
+                    <div class="form-group">
+                        <label for="colores">Colores preferidos</label>
+                        <input type="text" id="colores" name="Colores Preferidos" placeholder="Ej: Minimalista, tonos madera y verde bosque">
+                    </div>
+                    <div class="form-group">
+                        <label>Logotipo (si tienes)</label>
+                        <div class="file-input-wrapper">
+                            <div class="file-custom-btn">
+                                <span>🎨</span>
+                                <span id="logo-name">Subir logotipo</span>
+                            </div>
+                            <input type="file" name="Logotipo" accept="image/*" onchange="document.getElementById('logo-name').innerText = this.files[0].name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Imágenes del negocio (Local, equipo, trabajos...)</label>
+                        <div class="file-input-wrapper">
+                            <div class="file-custom-btn">
+                                <span>📷</span>
+                                <span id="images-name">Subir fotos (varias permitidas)</span>
+                            </div>
+                            <input type="file" name="Fotos del Negocio" multiple accept="image/*" onchange="document.getElementById('images-name').innerText = this.files.length + ' archivos seleccionados'">
+                        </div>
+                    </div>
                 </div>
 
-                <div style="margin-top: 3rem;">
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Briefing</button>
+                <!-- SECCIÓN 3: CONTENIDO -->
+                <div class="form-section" style="margin-bottom: 3rem;">
+                    <h3 class="mono-text" style="color: var(--accent-red); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">03 // Contenido y Estructura</h3>
+                    <div class="form-group">
+                        <label for="servicios">Servicios Principales</label>
+                        <textarea id="servicios" name="Servicios" rows="3" placeholder="Lista de qué vendes o qué haces exactamente..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="objetivo">Objetivo de la Web</label>
+                        <input type="text" id="objetivo" name="Objetivo de la Web" placeholder="Ej: Que me contacten por WhatsApp, reservar cita, ver menú..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="textos">Textos Clave</label>
+                        <textarea id="textos" name="Textos Clave" rows="4" placeholder="Háblanos de tu historia o lo que quieras que se lea sí o sí..."></textarea>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 4: EXTRAS -->
+                <div class="form-section">
+                    <h3 class="mono-text" style="color: var(--accent-red); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">04 // Extras</h3>
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios adicionales</label>
+                        <textarea id="comentarios" name="Comentarios Extra" rows="3" placeholder="Cualquier detalle que no encaje arriba..."></textarea>
+                    </div>
+                </div>
+
+                <div style="margin-top: 4rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Cuestionario</button>
                 </div>
             </form>
         </div>
@@ -77,8 +118,13 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content" style="justify-content: center;">
+            <div class="footer-content" style="flex-direction: column; text-align: center; gap: 2rem;">
                 <div class="logo">bit<span>Layout</span></div>
+                <div class="footer-note" style="max-width: 600px; margin: 0 auto;">
+                    <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Sin plantillas. Sin límites.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">En bitLayout no usamos plantillas; cada web es única y especial, construida desde cero con <strong>HTML, CSS y JavaScript</strong> para garantizar una velocidad ultra rápida.</p>
+                </div>
+                <p class="mono-text">&copy; 2026 bitLayout. Todos los "bits" reservados.</p>
             </div>
         </div>
     </footer>
