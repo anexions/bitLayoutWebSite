@@ -30,18 +30,30 @@
     <nav id="navbar">
         <div class="container">
             <a href="#hero" class="logo">bit<span>Layout</span></a>
-            <button class="hamburger" aria-label="Abrir menú">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#filosofia">Filosofía</a></li>
-                <li><a href="#soluciones">Soluciones</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#faq">Dudas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="es" title="Español">
+                        <span class="flag">🇪🇸</span>
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <span class="flag">🇬🇧</span>
+                    </button>
+                </div>
+
+                <button class="hamburger" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#filosofia" data-i18n="nav-filosofia">Filosofía</a></li>
+                    <li><a href="#soluciones" data-i18n="nav-soluciones">Soluciones</a></li>
+                    <li><a href="#proyectos" data-i18n="nav-proyectos">Proyectos</a></li>
+                    <li><a href="#faq" data-i18n="nav-faq">Dudas</a></li>
+                    <li><a href="#contacto" data-i18n="nav-contacto">Contacto</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -49,14 +61,15 @@
         <div class="grid-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <p class="mono-text reveal">01 // programming + design</p>
-                <h1 class="reveal">En bit<span class="highlight">Layout.</span>, construimos tu web con un <span
-                        class="highlight">propósito.</span>
+                <p class="mono-text reveal" data-i18n="hero-mono">01 // programming + design</p>
+                <h1 class="reveal" data-i18n="hero-title">En bit<span class="highlight">Layout.</span>, construimos tu
+                    web con un <span class="highlight">propósito.</span>
                 </h1>
-                <p class="subtitle reveal">Donde tu idea se transforma en negocio. Sin adornos innecesarios, solo código
+                <p class="subtitle reveal" data-i18n="hero-subtitle">Donde tu idea se transforma en negocio. Sin adornos
+                    innecesarios, solo código
                     limpio y diseño minimalista.</p>
                 <div class="cta-group reveal">
-                    <a href="#soluciones" class="btn btn-primary">Ver Soluciones</a>
+                    <a href="#soluciones" class="btn btn-primary" data-i18n="hero-cta">Ver Soluciones</a>
                 </div>
             </div>
         </div>
@@ -66,20 +79,23 @@
         <div class="container">
             <div class="section-layout">
                 <div class="section-info">
-                    <h2 class="reveal">Nada está porque sí.</h2>
-                    <p class="reveal">En bitLayout creemos que el minimalismo no es la ausencia de elementos, sino la
+                    <h2 class="reveal" data-i18n="fil-title">Nada está porque sí.</h2>
+                    <p class="reveal" data-i18n="fil-desc">En bitLayout creemos que el minimalismo no es la ausencia de
+                        elementos, sino la
                         presencia de sentido. Cada línea de código y cada píxel de diseño están ahí para cumplir un
                         objetivo: que tus clientes lleguen a ti.</p>
                     <div class="philosophy-grid">
                         <div class="phil-item reveal">
                             <span class="mono-text">01</span>
-                            <h3>Lógica Pura</h3>
-                            <p>Programación robusta que sostiene estructuras visuales impecables.</p>
+                            <h3 data-i18n="fil-item-1-title">Lógica Pura</h3>
+                            <p data-i18n="fil-item-1-desc">Programación robusta que sostiene estructuras visuales
+                                impecables.</p>
                         </div>
                         <div class="phil-item reveal">
                             <span class="mono-text">02</span>
-                            <h3>Diseño Sentido</h3>
-                            <p>Estética que comunica, no que decora. Minimalismo funcional.</p>
+                            <h3 data-i18n="fil-item-2-title">Diseño Sentido</h3>
+                            <p data-i18n="fil-item-2-desc">Estética que comunica, no que decora. Minimalismo funcional.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -104,60 +120,71 @@
     <section id="soluciones">
         <div class="container">
             <div class="section-header">
-                <h2 class="reveal">Nuestras Soluciones</h2>
-                <p class="reveal">Transparencia y claridad. Dos caminos para digitalizar tu visión.</p>
+                <h2 class="reveal" data-i18n="sol-title">Nuestras Soluciones</h2>
+                <p class="reveal" data-i18n="sol-desc">Transparencia y claridad. Dos caminos para digitalizar tu visión.
+                </p>
             </div>
             <div class="pricing-grid">
                 <div class="price-card accent reveal">
-                    <div class="card-badge">Oferta</div>
+                    <div class="card-badge" data-i18n="price-genesis-badge">Oferta</div>
                     <div class="card-header">
-                        <span class="mono-text">Genesis Bit</span>
-                        <h3>Landing Page</h3>
+                        <span class="mono-text" data-i18n="price-genesis-name">Genesis Bit</span>
+                        <h3 data-i18n="price-genesis-title">Landing Page</h3>
                     </div>
                     <div class="card-body">
-                        <p class="price" data-tooltip="240,79€ IVA incl. + 30€/año hosting y dominio">199€
-                            <span>(+IVA)</span>
+                        <p class="price" data-tooltip="240,79€ IVA incl. + 30€/año hosting y dominio">
+                            <span data-i18n="price-genesis-price">199€</span>
+                            <span data-i18n="price-genesis-iva">(+IVA)</span>
                         </p>
                         <ul>
-                            <li
-                                data-tooltip="Toda tu información en una sola página fluida, optimizada para la retención.">
+                            <li data-tooltip="Toda tu información en una sola página fluida, optimizada para la retención."
+                                data-i18n="price-genesis-li-1">
                                 Diseño Single-Page</li>
-                            <li
-                                data-tooltip="Estructura preparada para que Google y otros buscadores te encuentren fácilmente.">
+                            <li data-tooltip="Estructura preparada para que Google y otros buscadores te encuentren fácilmente."
+                                data-i18n="price-genesis-li-2">
                                 Optimización SEO</li>
-                            <li data-tooltip="Nos encargamos del servidor y mantenimiento por ti.">Hosting gestionado
+                            <li data-tooltip="Nos encargamos del servidor y mantenimiento por ti."
+                                data-i18n="price-genesis-li-3">Hosting gestionado
                             </li>
-                            <li data-tooltip="Diseño estratégico para guiar al usuario hacia el contacto o la compra.">
+                            <li data-tooltip="Diseño estratégico para guiar al usuario hacia el contacto o la compra."
+                                data-i18n="price-genesis-li-4">
                                 Foco en Conversión</li>
                         </ul>
                     </div>
                     <div class="card-footer">
                         <a href="https://wa.me/34601643277?text=Hola,%20solicito%20información%20sobre%20el%20Genesis%20Bit%20(199€)."
-                            class="btn btn-outline" target="_blank" rel="noopener noreferrer">Empezar ahora</a>
+                            class="btn btn-outline" target="_blank" rel="noopener noreferrer"
+                            data-i18n="price-genesis-cta">Empezar ahora</a>
                     </div>
                 </div>
                 <div class="price-card featured reveal">
                     <div class="card-header">
-                        <span class="mono-text">Architect Layout</span>
-                        <h3>Web Completa</h3>
+                        <span class="mono-text" data-i18n="price-architect-name">Architect Layout</span>
+                        <h3 data-i18n="price-architect-title">Web Completa</h3>
                     </div>
                     <div class="card-body">
-                        <p class="price" data-tooltip="422,29€ IVA incl. + 30€/año hosting y dominio">349€
-                            <span>(+IVA)</span>
+                        <p class="price" data-tooltip="422,29€ IVA incl. + 30€/año hosting y dominio">
+                            <span data-i18n="price-architect-price">349€</span>
+                            <span data-i18n="price-architect-iva">(+IVA)</span>
                         </p>
                         <ul>
-                            <li data-tooltip="Sitio web completo con secciones dedicadas (Inicio, Servicios, etc.).">
+                            <li data-tooltip="Sitio web completo con secciones dedicadas (Inicio, Servicios, etc.)."
+                                data-i18n="price-architect-li-1">
                                 Multi-página</li>
-                            <li data-tooltip="Transiciones suaves y efectos visuales que dan vida a tu marca.">
+                            <li data-tooltip="Transiciones suaves y efectos visuales que dan vida a tu marca."
+                                data-i18n="price-architect-li-2">
                                 Animaciones Premium</li>
-                            <li data-tooltip="Funcionalidades a medida según tus necesidades específicas.">Lógica de
+                            <li data-tooltip="Funcionalidades a medida según tus necesidades específicas."
+                                data-i18n="price-architect-li-3">Lógica de
                                 Negocio Custom</li>
-                            <li data-tooltip="Preguntar al contratar">Funciones específicas*</li>
+                            <li data-tooltip="Preguntar al contratar" data-i18n="price-architect-li-4">Funciones
+                                específicas*</li>
                         </ul>
                     </div>
                     <div class="card-footer">
                         <a href="https://wa.me/34601643277?text=Hola,%20solicito%20información%20sobre%20el%20desarrollo%20de%20una%20Web%20Completa%20para%20mi%20negocio."
-                            class="btn btn-primary" target="_blank" rel="noopener noreferrer">Empezar ahora</a>
+                            class="btn btn-primary" target="_blank" rel="noopener noreferrer"
+                            data-i18n="price-architect-cta">Empezar ahora</a>
                     </div>
                 </div>
             </div>
@@ -167,52 +194,63 @@
     <section id="proyectos">
         <div class="container">
             <div class="section-header">
-                <h2 class="reveal">Proyectos en Marcha</h2>
-                <p class="reveal">Casos reales donde el código y el diseño se unen para impulsar el negocio.</p>
+                <h2 class="reveal" data-i18n="proj-title">Proyectos en Marcha</h2>
+                <p class="reveal" data-i18n="proj-desc">Casos reales donde el código y el diseño se unen para impulsar
+                    el negocio.</p>
             </div>
             <div class="projects-grid">
                 <a href="https://metodoaf.es" class="project-card reveal" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span>Ver Proyecto / 01</span>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                         </div>
-                        <div class="mockup-content">
-                            <span class="mono-text">METODOAF</span>
-                            <h4>Portal de Bienestar & Fitness</h4>
-                            <p>Estructura robusta y foco en la conversión para un acompañamiento integral.</p>
+                        <div class="browser-content">
+                            <img src="screen/metodoAFScreen.png" alt="Screenshot Metodo AF">
                         </div>
+                    </div>
+                    <div class="mockup-content">
+                        <span class="mono-text">METODOAF / 01</span>
+                        <h4 data-i18n="proj-1-title">Portal de Bienestar & Fitness</h4>
+                        <p data-i18n="proj-1-desc">Estructura robusta y foco en la conversión para un acompañamiento
+                            integral.</p>
                     </div>
                 </a>
                 <a href="https://www.mangatacafebar.es/" class="project-card reveal" target="_blank"
                     rel="noopener noreferrer">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span>Ver Proyecto / 02</span>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                         </div>
-                        <div class="mockup-content">
-                            <span class="mono-text">MANGATACAFEBAR</span>
-                            <h4>Landing Page de Cafetería y Restaurante</h4>
-                            <p>Diseño moderno y elegante con menú en línea y gestión de pedidos.</p>
+                        <div class="browser-content">
+                            <img src="screen/mangataScreen.png" alt="Screenshot Mangata Cafe Bar">
                         </div>
+                    </div>
+                    <div class="mockup-content">
+                        <span class="mono-text">MANGATACAFEBAR / 02</span>
+                        <h4 data-i18n="proj-2-title">Landing Page de Cafetería y Restaurante</h4>
+                        <p data-i18n="proj-2-desc">Diseño moderno y elegante con menú en línea y gestión de pedidos.</p>
                     </div>
                 </a>
                 <a href="https://www.restauranteparquesol.es/" class="project-card reveal" target="_blank"
                     rel="noopener noreferrer">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <span>Ver Proyecto / 03</span>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                         </div>
-                        <div class="mockup-content">
-                            <span class="mono-text">RESTAURANTEPARQUESOL</span>
-                            <h4>Landing Page para Lugar de Eventos.</h4>
-                            <p>Diseño emotivo, conversión directa con la empresa.</p>
+                        <div class="browser-content">
+                            <img src="screen/restauranteparquesol.jpg" alt="Screenshot Restaurante Parquesol">
                         </div>
+                    </div>
+                    <div class="mockup-content">
+                        <span class="mono-text">RESTAURANTEPARQUESOL / 03</span>
+                        <h4 data-i18n="proj-3-title">Landing Page para Lugar de Eventos.</h4>
+                        <p data-i18n="proj-3-desc">Diseño emotivo, conversión directa con la empresa.</p>
                     </div>
                 </a>
             </div>
             <div class="scroll-indicator">
                 <div class="scroll-line"></div>
-                <span>Desliza para explorar</span>
+                <span data-i18n="proj-scroll">Desliza para explorar</span>
             </div>
         </div>
     </section>
@@ -220,18 +258,20 @@
     <section id="faq">
         <div class="container">
             <div class="section-header">
-                <h2 class="reveal">Resuelvo tus dudas</h2>
-                <p class="reveal">Claridad total desde el primer bit. Todo lo que necesitas saber antes de empezar.</p>
+                <h2 class="reveal" data-i18n="faq-title">Resuelvo tus dudas</h2>
+                <p class="reveal" data-i18n="faq-desc">Claridad total desde el primer bit. Todo lo que necesitas saber
+                    antes de empezar.</p>
             </div>
             <div class="faq-accordion">
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h3>¿Cuál es el precio final?</h3>
+                        <h3 data-i18n="faq-q1">¿Cuál es el precio final?</h3>
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>El precio total es el indicado en las soluciones <strong>+ IVA</strong>. Además, hay que
+                            <p data-i18n="faq-a1">El precio total es el indicado en las soluciones <strong>+
+                                    IVA</strong>. Además, hay que
                                 añadir el coste del <strong>hosting y dominio</strong> si no dispones de ellos, que
                                 tiene un coste aproximado de <strong>35 € al año</strong>.</p>
                         </div>
@@ -240,12 +280,13 @@
 
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h3>¿Qué es el hosting y el dominio?</h3>
+                        <h3 data-i18n="faq-q2">¿Qué es el hosting y el dominio?</h3>
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>Explicado de forma sencilla: el <strong>dominio</strong> es la dirección de tu casa en
+                            <p data-i18n="faq-a2">Explicado de forma sencilla: el <strong>dominio</strong> es la
+                                dirección de tu casa en
                                 internet (ej: tuempresa.com) y el <strong>hosting</strong> es el terreno digital donde
                                 está construida tu web. Yo puedo encargarme de gestionar ambas cosas por ti para que no
                                 tengas que preocuparte de tecnicismos.</p>
@@ -255,12 +296,13 @@
 
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h3>¿Cómo se realiza el pago?</h3>
+                        <h3 data-i18n="faq-q3">¿Cómo se realiza el pago?</h3>
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>Para tu comodidad y rapidez, acepto pagos mediante <strong>transferencia
+                            <p data-i18n="faq-a3">Para tu comodidad y rapidez, acepto pagos mediante
+                                <strong>transferencia
                                     bancaria</strong> o <strong>Bizum</strong>.</p>
                         </div>
                     </div>
@@ -268,18 +310,19 @@
 
                 <div class="faq-item reveal">
                     <div class="faq-question">
-                        <h3>¿Qué necesito de ti para empezar?</h3>
+                        <h3 data-i18n="faq-q4">¿Qué necesito de ti para empezar?</h3>
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>Para dar forma a tu proyecto, necesitaré:</p>
+                            <p data-i18n="faq-a4">Para dar forma a tu proyecto, necesitaré:</p>
                             <ul>
                                 <li>Nombre de tu empresa o marca.</li>
                                 <li>Los colores que te gustaría usar.</li>
                                 <li>Una idea general de lo que buscas.</li>
                                 <li>Y lo más importante: <strong>¿qué te gustaría que la gente hiciese al entrar en tu
                                         web?</strong> (comprar, llamarte, reservar, etc.).</li>
+                                <li>No te preocupes, te enviaré un link para guiárte.</li>
                             </ul>
                         </div>
                     </div>
@@ -292,8 +335,9 @@
         <div class="container">
             <div class="contact-layout">
                 <div class="contact-info reveal">
-                    <h2>Hablemos.</h2>
-                    <p>Estamos en el espacio digital, operando desde <strong>España</strong> para el mundo.</p>
+                    <h2 data-i18n="contact-title">Hablemos.</h2>
+                    <p data-i18n="contact-desc">Estamos en el espacio digital, operando desde <strong>España</strong>
+                        para el mundo.</p>
                     <div class="contact-meta">
                         <a href="mailto:hola@bitlayout.es" class="mono-text">hola@bitlayout.es</a>
                     </div>
@@ -301,18 +345,21 @@
                 <div class="contact-form reveal">
                     <form>
                         <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" placeholder="Para dirigirnos a ti">
+                            <label for="name" data-i18n="contact-label-name">Nombre</label>
+                            <input type="text" id="name" placeholder="Para dirigirnos a ti"
+                                data-i18n-placeholder="contact-placeholder-name">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="tu@email.com">
+                            <label for="email" data-i18n="contact-label-email">Email</label>
+                            <input type="email" id="email" placeholder="tu@email.com"
+                                data-i18n-placeholder="contact-placeholder-email">
                         </div>
                         <div class="form-group">
-                            <label for="message">Idea</label>
-                            <textarea id="message" rows="4" placeholder="Háblanos de tu proyecto"></textarea>
+                            <label for="message" data-i18n="contact-label-message">Idea</label>
+                            <textarea id="message" rows="4" placeholder="Háblanos de tu proyecto"
+                                data-i18n-placeholder="contact-placeholder-message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact-submit">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
@@ -331,13 +378,15 @@
             <div class="footer-content" style="flex-direction: column; text-align: center; gap: 2rem;">
                 <div class="logo">bit<span>Layout</span></div>
                 <div class="footer-note" style="max-width: 600px; margin: 0 auto;">
-                    <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">Sin plantillas. Sin
+                    <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;"
+                        data-i18n="footer-note-title">Sin plantillas. Sin
                         límites.</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">En bitLayout no usamos plantillas; cada web
+                    <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="footer-note-desc">En bitLayout no
+                        usamos plantillas; cada web
                         es única y especial, construida desde cero con <strong>HTML, CSS y JavaScript</strong> para
                         garantizar una velocidad ultra rápida.</p>
                 </div>
-                <p class="mono-text">&copy; 2026 bitLayout. Todos los "bits" reservados.</p>
+                <p class="mono-text" data-i18n="footer-copy">&copy; 2026 bitLayout. Todos los "bits" reservados.</p>
             </div>
         </div>
     </footer>
@@ -345,13 +394,15 @@
     <div id="cookie-banner" class="cookie-banner reveal">
         <div class="container">
             <div class="cookie-content">
-                <p>Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra política de
+                <p data-i18n="cookie-text">Utilizamos cookies para mejorar tu experiencia. Al continuar navegando,
+                    aceptas nuestra política de
                     cookies.</p>
-                <button id="accept-cookies" class="btn btn-primary">Aceptar</button>
+                <button id="accept-cookies" class="btn btn-primary" data-i18n="cookie-accept">Aceptar</button>
             </div>
         </div>
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 

@@ -112,6 +112,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Multi-language Logic ---
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const currentLang = localStorage.getItem('selectedLang') || 'es';
+
+    function updateLanguage(lang) {
+        // Update texts
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Update placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (translations[lang] && translations[lang][key]) {
+                el.placeholder = translations[lang][key];
+            }
+        });
+
+        // Update active button state
+        langBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+        
+        // Save choice
+        localStorage.setItem('selectedLang', lang);
+    }
+
+    // Initialize language
+    updateLanguage(currentLang);
+
+    // Add click listeners
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selectedLang = btn.getAttribute('data-lang');
+            updateLanguage(selectedLang);
+        });
+    });
+
     // --- Background Spotlight Logic ---
     window.addEventListener('mousemove', (e) => {
         const xPos = (e.clientX / window.innerWidth) * 100;
